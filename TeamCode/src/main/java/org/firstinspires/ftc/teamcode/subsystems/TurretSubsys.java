@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode.subsystems;
 
+import static java.lang.Math.abs;
+
 import com.pedropathing.math.Pose;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.seattlesolvers.solverslib.controller.PDController;
@@ -38,14 +40,14 @@ public class TurretSubsys {
     public void turretTrack(Pose robotPose){
         Pose goal = RobotConstants.getGoal(robotPose);
 
-        double dx = goal.x() - robotPose.x();
-        double dy = goal.y() - robotPose.y();
+        double dx = abs(goal.x() - robotPose.x());
+        double dy = abs(goal.y() - robotPose.y());
 
         double fieldAngle = Math.toDegrees(Math.atan2(dy, dx));
         double robotHeading = Math.toDegrees(robotPose.heading()) + offset;
 
         double target = fieldAngle - robotHeading;
-        target = ((target + 180) % 360 + 360) % 360 - 180;
+        //target = ((target + 180) % 360 + 360) % 360 - 180;
 
         turretToAngle(target);
     }

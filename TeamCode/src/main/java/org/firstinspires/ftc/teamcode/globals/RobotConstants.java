@@ -15,13 +15,12 @@ public class RobotConstants {
 
     public static Pose blueCloseGoal = new Pose(84, 58);
     public static Pose blueFarGoal = new Pose(84, 84);
-    public static final double goalSwitchY = 75;
+    public static final double goalSwitchY = 71;
     public static double goalHeight = 53.5;
 
     //intake
     public static final String intakeName = "intake";
     public static double flowerMin;
-    public
 
     //flower intake
     public static final String flowerIntakeName = "flowerIntake";
